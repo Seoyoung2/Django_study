@@ -1,7 +1,11 @@
-from django.urls import path
+from django.urls import path, register_converter
+from .converters import FourDigitYearConverter
+from . import views
 
-app name = 'shop'
+register_converter(FourDigitYearConverter, 'yyyy')
+
+app_name = 'shop'
 
 urlpatterns = [
-
+    path('archives/<yyyy:year>/', views.archives_year),
 ]
