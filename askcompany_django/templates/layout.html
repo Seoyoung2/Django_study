@@ -5,9 +5,7 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
         <title>{% block title %}Ask Company{% endblock %}</title>
-        <style>
-            body { background-color: lightgrey; }
-        </style>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" />
         {% block extra_head %}
              <link rel="stylesheet" href="{% fresh_static "main.css" %}" />
         {% endblock %}
@@ -15,12 +13,20 @@
     <body>
         <h1>Ask Company</h1>
 
-        {% block content %}
-        {% endblock %}
-
+        <div class="container">
+            <div class="col-sm-12">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        
         <hr/>
         &copy; 2018. Ask Company.
 
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js"></script>
+        
         {% block extra_body %}
             <script src="{% static "main.js" %}"></script>"
         {% endblock %}
